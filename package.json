@@ -1,0 +1,26 @@
+{
+  "name": "weekly",
+  "version": "0.0.0",
+  "description": "Weekly to do list using chrome extension",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jicjjang/weekly.git"
+  },
+  "keywords": [
+    "todo",
+    "node",
+    "npm",
+    "weekly",
+    "javascript"
+  ],
+  "author": "jicjjang <jicjjang12@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jicjjang/weekly/issues"
+  },
+  "homepage": "https://github.com/jicjjang/weekly#readme"
+}
