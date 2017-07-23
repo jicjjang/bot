@@ -1,23 +1,73 @@
-.container_weekly {
-  display: flex;
-  -webkit-display: flex;
-  width: 500px;
-  .listContainer_weekly {
-    width: 50%;
+html.weekly {
+  overflow-y: hidden;
+}
+body {
+  width: 480px;
+  height: 500px;
+}
+#dimmed_weekly {
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 99999;
+}
+#container_weekly {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 440px;
+  min-height: 100%;
+  padding: 20px;
+  background: white;
+}
+.infomation_weekly {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  & > h1 {
+    margin: 0 0 10px 0;
   }
-  .inputContainer_weekly {
-    flex: 1;
-    -webkit-flex: 1;
-    section {
-      .time {
-        margin: 0 0 5px 0;
-        input {
-
-        }
-      }
-      textarea {
-        width: 200px;
-        margin: 0 0 10px 0;
+  & > article > div > ul {
+    margin: 0;
+    padding: 14px;
+    list-style-type: decimal;
+    & > li {
+      word-break: break-all;
+    }
+  }
+}
+.form_weekly {
+  position: fixed;
+  top: 0;
+  right: 40px;
+  margin: 54px 0 0 0;
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  & > article {
+    & > input {
+      width: 100px;
+      height: 20px;
+      margin: 0 0 20px 0;
+    }
+    & > button {
+      width: 50px;
+      height: 26px;
+      background-color: #fff;
+      border: 1px solid rgb(238, 238, 238);
+      vertical-align: top;
+    }
+    & > .time_weekly {
+      margin: 0 0 5px 0;
+      & > input {
+        width: 114px;
+        margin: 0 0 0 6px;
       }
     }
   }
