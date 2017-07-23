@@ -10,6 +10,10 @@
     "*://*/*",
     "https://ajax.googleapis.com/"
   ],
+  "content_scripts": [{
+    "css": ["static/css/normalize.min.css"],
+    "js": ["static/js/jquery-3.2.1.min.js"]
+  }],
   "background": {
     "scripts": [
       "index.js"
