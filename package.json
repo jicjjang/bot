@@ -1,6 +1,6 @@
 {
   "name": "weekly",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Weekly to do list using chrome extension",
   "main": "index.js",
   "scripts": {
