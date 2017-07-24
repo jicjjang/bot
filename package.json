@@ -1,5 +1,5 @@
 {
-  "name": "weekly",
+  "name": "@jicjjang/weekly",
   "version": "0.0.1",
   "description": "Weekly to do list using chrome extension",
   "main": "index.js",
