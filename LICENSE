@@ -1,32 +1,3 @@
-# Weekly
-
-Weekly to do list to chrome extension using with NHN messenger Dooray.
-
-![Usage]('static/capture.png')
-
-## Install
-
-~~~shell
-$ git clone https://github.com/jicjjang/weekly
-$ cd weekly
-$ vi static/config.js
-~~~
-
-~~~javascript
-// static/config.js
-var FIREBASE_URL = "FIREBASE_URL";
-var bot_image = "IMAGE_URL";
-var bot_id = "DOORAY_ID";
-~~~
-
-## Usage
-
-Go to `chrome://extensions/` tab and check the `Developer mode` in Google Chrome.  
-Choose the `Load unpacked extensions` button next to Load the `weekly` project.  
-Is done.
-
-## LICENSE
-
 MIT License
 
 Copyright (c) 2017 jicjjang
