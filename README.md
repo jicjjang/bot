@@ -2,7 +2,7 @@
 
 Weekly to do list to chrome extension using with NHN messenger Dooray.
 
-![Usage]('static/capture.png')
+![Usage](static/capture.png)
 
 ## Install
 
