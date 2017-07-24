@@ -1,4 +1,4 @@
-# Weekly
+# Weeklist
 
 Weekly to do list to chrome extension using with NHN messenger Dooray.
 
@@ -7,7 +7,7 @@ Weekly to do list to chrome extension using with NHN messenger Dooray.
 ## Install
 
 ~~~shell
-$ git clone https://github.com/jicjjang/weekly
+$ git clone https://github.com/jicjjang/weeklist
 $ cd weekly
 $ vi static/config.js
 ~~~

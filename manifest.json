@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "weekly",
+  "name": "weeklist",
   "description": "Weekly to do list using chrome extension",
   "version": "0.1",
   "permissions": [

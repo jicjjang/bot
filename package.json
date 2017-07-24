@@ -1,5 +1,5 @@
 {
-  "name": "@jicjjang/weekly",
+  "name": "weeklist",
   "version": "0.0.1",
   "description": "Weekly to do list using chrome extension",
   "main": "index.js",
@@ -20,7 +20,7 @@
   "author": "jicjjang <jicjjang12@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jicjjang/weekly/issues"
+    "url": "https://github.com/jicjjang/weeklist/issues"
   },
-  "homepage": "https://github.com/jicjjang/weekly#readme"
+  "homepage": "https://github.com/jicjjang/weeklist#readme"
 }
