@@ -8,13 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jicjjang/weekly.git"
+    "url": "git+https://github.com/jicjjang/weeklist.git"
   },
   "keywords": [
     "todo",
     "node",
     "npm",
     "weekly",
+    "weeklist",
     "javascript"
   ],
   "author": "jicjjang <jicjjang12@gmail.com>",

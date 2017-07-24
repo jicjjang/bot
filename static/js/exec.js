@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $.ajax({
-    url: 'https://ttest-e32d9.firebaseio.com/data.json',
+    url: FIREBASE_URL + '/data.json',
     method: 'GET',
     success: function (data) {
       for (var k in data) {
@@ -25,7 +25,7 @@ $(document).ready(function () {
           image: bot_image,
           hookTime: time,
           hookTerm: "0",
-          name: "Weekly 봇",
+          name: "Weeklist 봇",
           data: {
             text: val,
             day: day

@@ -8,7 +8,7 @@ Weekly to do list to chrome extension using with NHN messenger Dooray.
 
 ~~~shell
 $ git clone https://github.com/jicjjang/weeklist
-$ cd weekly
+$ cd weeklist
 $ vi static/config.js
 ~~~
 
@@ -22,7 +22,7 @@ var bot_id = "DOORAY_ID";
 ## Usage
 
 Go to `chrome://extensions/` tab and check the `Developer mode` in Google Chrome.  
-Choose the `Load unpacked extensions` button next to Load the `weekly` project.  
+Choose the `Load unpacked extensions` button next to Load the `weeklist` project.  
 Is done.
 
 ## LICENSE
