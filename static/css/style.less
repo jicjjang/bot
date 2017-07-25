@@ -33,7 +33,15 @@ body {
     padding: 14px;
     list-style-type: decimal;
     & > li {
+      margin: 0 0 5px 0;
       word-break: break-all;
+      &:hover {
+        background-color: rgba(0,0,0,0.3);
+        cursor: pointer;
+      }
+      &.choice {
+        background-color: rgba(0,0,0,0.3);
+      }
     }
   }
 }
