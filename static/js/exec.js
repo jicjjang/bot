@@ -3,9 +3,24 @@ $(document).ready(function () {
     url: FIREBASE_URL + '/data.json',
     method: 'GET',
     success: function (data) {
+      var days = [];
       for (var k in data) {
-        if (data[k].hookType === 'dooray-weeklist') {
-          $('.' + data[k].data.day + '_ul').append('<li>' + data[k].hookTime + '까지 : ' + data[k].data.text + '</li>');
+        days.push(data[k]);
+      }
+      days.sort(function (a, b) {
+        var timeA = parseInt(a.hookTime.split(':').join(''));
+        var timeB = parseInt(b.hookTime.split(':').join(''));
+
+        if (timeA < timeB) {
+          return -1;
+        } else if (timeA > timeB) {
+          return 1;
+        }
+        return 0;
+      });
+      for (var k in days) {
+        if (days[k].hookType === 'dooray-weeklist') {
+          $('.' + days[k].data.day + '_ul').append('<li>' + days[k].hookTime + '까지 : ' + days[k].data.text + '</li>');
         }
       }
     }
