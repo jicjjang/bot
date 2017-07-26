@@ -32,64 +32,89 @@ $(document).ready(function () {
         var day = target.parent().attr('class').split('_ul weeks_ul')[0];
         var modifyTime = $('article.' + day + ' > .time > input[type=time]');
         var modifyText = $('article.' + day + ' > .time > input[type=text]');
-        target.addClass('choice');
-        modifyTime.val(target.data('time'));
-        modifyText.val(target.data('text'));
 
-        $('article.' + day + ' > button').off('click').on('click', function (e) {
-          $.ajax({
-            url: FIREBASE_URL + '/data/' + target.data('key') + '.json',
-            method: 'PUT',
-            data: JSON.stringify({
-              hookType: "dooray-weeklist",
-              id: bot_id,
-              description: 'weeklist',
-              image: bot_image,
-              hookTime: modifyTime.val(),
-              hookTerm: "0",
-              name: "Weeklist 봇",
-              data: {
-                text: modifyText.val(),
-                day: day
-              }
-            }),
-            success: function (data) {
-              console.log(data);
-              location.reload();
-            }
-          });
-        }).text('수정');
+        if (target.hasClass('choice')) {
+          target.removeClass('choice');
+          modifyTime.val('');
+          modifyText.val('');
+          $('article.' + day + ' > .button > button.save_button').addClass('active');
+          $('article.' + day + ' > .button > button.modify_button, article.' + day + ' > .button > button.delete_button').removeClass('active').attr('data-key', '');
+        } else {
+
+          target.siblings().removeClass('choice');
+          target.addClass('choice');
+          modifyTime.val(target.data('time'));
+          modifyText.val(target.data('text'));
+
+          $('article.' + day + ' > .button > button.save_button').removeClass('active');
+          $('article.' + day + ' > .button > button.modify_button, article.' + day + ' > .button > button.delete_button').addClass('active').attr('data-key', target.data('key'));
+        }
       });
     }
   });
 
-  $('button').click(function (e) {
-    var target = $(e.target);
-    var val = target.siblings('.time').children('input[type=text]').val();
-    var time = target.siblings('.time').children('input[type=time]').val();
-    var day = target.attr('id').split('_button')[0];
+  addButton();
+  modifyButton();
+  deleteButton();
+});
 
-    if (val && time && day) {
-      $.post(FIREBASE_URL + '/data.json', JSON.stringify({
-          hookType: "dooray-weeklist",
-          id: bot_id,
-          description: 'weeklist',
-          image: bot_image,
-          hookTime: time,
-          hookTerm: "0",
-          name: "Weeklist 봇",
-          data: {
-            text: val,
-            day: day
-          }
-        }),
-        function (data) {
+function addButton () {
+  $('button.save_button').on('click', function (e) {
+    _commonFirebase (e, '_save_button', 'POST', false);
+  });
+}
+
+function modifyButton () {
+  $('button.modify_button').on('click', function (e) {
+    _commonFirebase (e, '_modify_button', 'PUT', true);
+  });
+}
+
+function _commonFirebase (e, splitClass, method, key) {
+  var target = $(e.target);
+  var val = target.parent().siblings('.time').children('input[type=text]').val();
+  var time = target.parent().siblings('.time').children('input[type=time]').val();
+  var day = target.attr('id').split(splitClass)[0];
+
+  if (val && time && day) {
+    $.ajax({
+      url: FIREBASE_URL + '/data' + (key ? '/' + target.data('key') : '') + '.json',
+      method: method,
+      data: JSON.stringify({
+        hookType: "dooray-weeklist",
+        id: bot_id,
+        description: 'weeklist',
+        image: bot_image,
+        hookTime: time,
+        hookTerm: "0",
+        name: "Weeklist 봇",
+        data: {
+          text: val,
+          day: day
+        }
+      }),
+      success: function (data) {
+        console.log(data);
+        location.reload();
+      }
+    });
+  } else {
+    alert('모두 입력해주세요.');
+  }
+}
+
+function deleteButton () {
+  $('button.delete_button').on('click', function (e) {
+    var key = $(e.target).data('key');
+    if (key) {
+      $.ajax({
+        url: FIREBASE_URL + '/data/' + key + '.json',
+        method: 'DELETE',
+        success: function (data) {
           console.log(data);
           location.reload();
         }
-      );
-    } else {
-      alert('모두 입력해주세요.');
+      });
     }
   });
-});
+}

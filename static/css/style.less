@@ -57,12 +57,29 @@ body {
   }
   & > article {
     margin: 0 0 10px 0;
-    & > button {
-      width: 50px;
-      height: 47px;
-      background-color: #fff;
-      border: 1px solid rgb(238, 238, 238);
+    & > .button {
+      display: inline-block;
       vertical-align: top;
+      & > button {
+        display: none;
+        width: 50px;
+        height: 47px;
+        background-color: #fff;
+        border: 1px solid rgb(238, 238, 238);
+        vertical-align: top;
+        &.save_button {
+          height: 47px;
+        }
+        &.modify_button {
+          height: 22px;
+        }
+        &.delete_button {
+          height: 22px;
+        }
+        &.active {
+          display: block;
+        }
+      }
     }
     & > .time {
       display: inline-block;
